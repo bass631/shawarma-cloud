@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Cloud</title>
+</head>
+
+<body>
+<form method="POST" th:action="@{/orders}" th:object="${order}">
+    <h1>Закажите свою шаверму!</h1>
+
+    <img th:src="@{/images/ShawarmaCloud.png}" alt="ShawarmaCloud" style="width:400px;height:400px">
+
+    <h3>Ваши шавермы в заказе:</h3>
+    <a th:href="@{/design}" id="another">Собрать другую шаверму</a><br>
+    <ul>
+        <li th:each="шаверма : ${order.shawarmas}">
+            <span th:text="${shawarma.name}">название шавермы</span></li>
+    </ul>
+
+    <h3>Детали доставки...</h3>
+    <label for="deliveryName">имя: </label>
+    <input type="text" th:field="${deliveryName}">
+    <br>
+
+    <label for="deliveryStreet">улица: </label>
+    <input type="text" th:field="${deliveryStreet}">
+    <br>
+
+    <label for="deliveryCity">город: </label>
+    <input type="text" th:field="${deliveryCity}">
+    <br>
+
+    <h3>Оплата...</h3>
+    <label for="ccNumber">номер карты #: </label>
+    <input type="text" th:field="${ccNumber}">
+    <br>
+
+    <label for="ccExpiration">срок действия: </label>
+    <input type="text" th:field="${ccExpiration}">
+    <br>
+
+    <label for="ccCVV">CVV: </label>
+    <input type="text" th:field="${ccCVV}">
+    <br>
+
+    <input type="submit" value="Подтвердить заказ">
+</form>
+</body>
+</html>
