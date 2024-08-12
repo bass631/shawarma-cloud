@@ -10,7 +10,6 @@ import ru.dbastrygin.shawarmacloud.model.Shawarma;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
@@ -65,6 +64,7 @@ public class DesignShawarmaController {
     public String processTaco(Shawarma shawarma, @ModelAttribute Order order) {
         order.addShawarma(shawarma);
         log.info("Processing shawarma: {}", shawarma);
+        log.info("Order from designController: {}", order);
         return "redirect:/orders/current";
     }
 }

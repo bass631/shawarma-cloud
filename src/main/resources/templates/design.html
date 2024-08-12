@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shawarma Cloud</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 
 <body>
-<h2>Собери свою шаверму</h2>
-<img th:src="@{/images/ShawarmaCloud.png}" alt="ShawarmaCloud" style="width:400px;height:400px">
+<h2>Соберите свою шаверму</h2>
+<img th:src="@{/images/ShawarmaCloud.png}" alt="ShawarmaCloud" style="width:200px;height:200px">
 
 <form method="POST" th:object="${shawarma}">
     <div class="grid">
@@ -56,6 +57,7 @@
     <div>
         <h3>Назовите вашу шаверму:</h3>
         <input type="text" th:field="*{name}">
+        <br>
         <br>
         <button>Собрать шавуху!</button>
     </div>

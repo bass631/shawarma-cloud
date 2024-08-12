@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-between; /* Распределение блоков с равными отступами */
+    gap: 20px; /* Расстояние между блоками */
+}
+
+.block {
+    border: 1px solid #ccc; /* Граница для блоков (для наглядности) */
+    padding: 10px;
+    width: 45%; /* Ширина каждого блока */
+}
+
+h3 {
+    margin-bottom: 10px; /* Отступ после заголовка */
+}
