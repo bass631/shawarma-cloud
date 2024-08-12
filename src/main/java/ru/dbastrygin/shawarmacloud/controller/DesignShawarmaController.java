@@ -1,8 +1,10 @@
 package ru.dbastrygin.shawarmacloud.controller;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import ru.dbastrygin.shawarmacloud.model.Ingredient;
 import ru.dbastrygin.shawarmacloud.model.Order;
@@ -61,10 +63,16 @@ public class DesignShawarmaController {
     }
 
     @PostMapping
-    public String processTaco(Shawarma shawarma, @ModelAttribute Order order) {
+    public String processTaco(
+            @Valid Shawarma shawarma, Errors errors,
+            @ModelAttribute Order order) {
+        if (errors.hasErrors()) {
+            return "design";
+        }
+
         order.addShawarma(shawarma);
         log.info("Processing shawarma: {}", shawarma);
-        log.info("Order from designController: {}", order);
+
         return "redirect:/orders/current";
     }
 }

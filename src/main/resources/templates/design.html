@@ -57,6 +57,9 @@
     <div>
         <h3>Назовите вашу шаверму:</h3>
         <input type="text" th:field="*{name}">
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}">name Error</span>
         <br>
         <br>
         <button>Собрать шавуху!</button>

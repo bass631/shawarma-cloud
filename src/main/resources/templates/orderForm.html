@@ -22,27 +22,45 @@
     <h3>Детали доставки...</h3>
     <label for="deliveryName">Имя: </label>
     <input type="text" th:field="${order.deliveryName}">
+    <span class="validationError"
+          th:if="${#fields.hasErrors('deliveryName')}"
+          th:errors="*{deliveryName}">deliveryName Error</span>
     <br>
 
     <label for="deliveryStreet">Улица: </label>
     <input type="text" th:field="${order.deliveryStreet}">
+    <span class="validationError"
+          th:if="${#fields.hasErrors('deliveryStreet')}"
+          th:errors="*{deliveryStreet}">deliveryStreet Error</span>
     <br>
 
     <label for="deliveryCity">Город: </label>
     <input type="text" th:field="${order.deliveryCity}">
+    <span class="validationError"
+          th:if="${#fields.hasErrors('deliveryCity')}"
+          th:errors="*{deliveryCity}">deliveryCity Error</span>
     <br>
 
     <h3>Оплата...</h3>
     <label for="ccNumber">Номер карты: </label>
     <input type="text" th:field="${order.ccNumber}">
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ccNumber')}"
+          th:errors="*{ccNumber}">CC Num Error</span>
     <br>
 
     <label for="ccExpiration">Срок действия: </label>
     <input type="text" th:field="${order.ccExpiration}">
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ccExpiration')}"
+          th:errors="*{ccExpiration}">ccExpiration Error</span>
     <br>
 
     <label for="ccCVV">CVV: </label>
     <input type="text" th:field="${order.ccCVV}">
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ccCVV')}"
+          th:errors="*{ccCVV}">ccCVV Error</span>
     <br>
     <br>
 
