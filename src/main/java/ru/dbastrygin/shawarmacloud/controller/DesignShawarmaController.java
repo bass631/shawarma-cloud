@@ -1,6 +1,7 @@
 package ru.dbastrygin.shawarmacloud.controller;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.dbastrygin.shawarmacloud.model.Ingredient;
 import ru.dbastrygin.shawarmacloud.model.Order;
 import ru.dbastrygin.shawarmacloud.model.Shawarma;
+import ru.dbastrygin.shawarmacloud.repository.IngredientRepository;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,26 +19,18 @@ import java.util.List;
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("order")
+@RequiredArgsConstructor
 public class DesignShawarmaController {
+
+    private final IngredientRepository ingredientRepository;
 
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
-        List<Ingredient> ingredients = Arrays.asList(
-                new Ingredient("RGLV", "Обычный лаваш", Ingredient.Type.WRAP),
-                new Ingredient("CELV", "Сырный лаваш", Ingredient.Type.WRAP),
-                new Ingredient("CHFL", "Куриное филе", Ingredient.Type.PROTEIN),
-                new Ingredient("GRBF", "Говяжья котлета", Ingredient.Type.PROTEIN),
-                new Ingredient("JLPN", "Халапеньо", Ingredient.Type.VEGGIES),
-                new Ingredient("PTTO", "Картофель", Ingredient.Type.VEGGIES),
-                new Ingredient("CHED", "Чеддер", Ingredient.Type.CHEESE),
-                new Ingredient("PARM", "Пармезан", Ingredient.Type.CHEESE),
-                new Ingredient("SISA", "Фирменный соус", Ingredient.Type.SAUCE),
-                new Ingredient("SRCA", "Сметана", Ingredient.Type.SAUCE)
-        );
+        Iterable<Ingredient> ingredients = ingredientRepository.findAll();
 
         Ingredient.Type[] types = Ingredient.Type.values();
         for (Ingredient.Type type : types) {
-            model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
+            model.addAttribute(type.toString().toLowerCase(), filterByType((List<Ingredient>) ingredients, type));
         }
     }
 
