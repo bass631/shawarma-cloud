@@ -7,9 +7,9 @@ from Shavarma_order;
 delete
 from Ingredient;
 
-insert into Ingredient (id, name, type) values ('RGLV', 'Обычный лаваш', 'WRAP');
+insert into Ingredient (id, name, type) values ('PTLV', 'Пита', 'WRAP');
 insert into Ingredient (id, name, type) values ('CELV', 'Сырный лаваш', 'WRAP');
-insert into Ingredient (id, name, type) values ('CHFL', 'Куриное филе', 'PROTEIN');
+insert into Ingredient (id, name, type) values ('KEBB', 'Кебаб', 'PROTEIN');
 insert into Ingredient (id, name, type) values ('GRBF', 'Говяжья котлета', 'PROTEIN');
 insert into Ingredient (id, name, type) values ('JLPN', 'Халапеньо', 'VEGGIES');
 insert into Ingredient (id, name, type) values ('PTTO', 'Картофель', 'VEGGIES');
