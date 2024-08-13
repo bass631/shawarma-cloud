@@ -8,17 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import ru.dbastrygin.shawarmacloud.model.Ingredient;
-import ru.dbastrygin.shawarmacloud.model.Order;
 import ru.dbastrygin.shawarmacloud.model.Shawarma;
+import ru.dbastrygin.shawarmacloud.model.ShawarmaOrder;
 import ru.dbastrygin.shawarmacloud.repository.IngredientRepository;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
 @Controller
 @RequestMapping("/design")
-@SessionAttributes("order")
+@SessionAttributes("shawarmaOrder")
 @RequiredArgsConstructor
 public class DesignShawarmaController {
 
@@ -41,9 +40,9 @@ public class DesignShawarmaController {
                 .toList();
     }
 
-    @ModelAttribute(name = "order")
-    public Order order() {
-        return new Order();
+    @ModelAttribute(name = "shawarmaOrder")
+    public ShawarmaOrder order() {
+        return new ShawarmaOrder();
     }
 
     @ModelAttribute(name = "shawarma")
@@ -59,12 +58,12 @@ public class DesignShawarmaController {
     @PostMapping
     public String processTaco(
             @Valid Shawarma shawarma, Errors errors,
-            @ModelAttribute Order order) {
+            @ModelAttribute ShawarmaOrder shawarmaOrder) {
         if (errors.hasErrors()) {
             return "design";
         }
 
-        order.addShawarma(shawarma);
+        shawarmaOrder.addShawarma(shawarma);
         log.info("Processing shawarma: {}", shawarma);
 
         return "redirect:/orders/current";

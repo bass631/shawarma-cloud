@@ -5,15 +5,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import ru.dbastrygin.shawarmacloud.model.Order;
+import ru.dbastrygin.shawarmacloud.model.ShawarmaOrder;
 import ru.dbastrygin.shawarmacloud.repository.OrderRepository;
 
 @Slf4j
 @Controller
 @RequestMapping("/orders")
-@SessionAttributes("order")
+@SessionAttributes("shawarmaOrder")
 @RequiredArgsConstructor
 public class OrderController {
 
@@ -25,14 +28,14 @@ public class OrderController {
     }
 
     @PostMapping
-    public String processOrder(@Valid Order order, Errors errors,
+    public String processOrder(@Valid ShawarmaOrder shawarmaOrder, Errors errors,
                                SessionStatus sessionStatus) {
         if (errors.hasErrors()) {
             return "orderForm";
         }
 
-        log.info("Order submitted: {}", order);
-        orderRepository.save(order);
+        log.info("Order submitted: {}", shawarmaOrder);
+        orderRepository.save(shawarmaOrder);
         sessionStatus.setComplete();
 
         return "redirect:/";

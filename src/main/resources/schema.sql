@@ -1,4 +1,4 @@
-create table if not exists Shavarma_order
+create table if not exists Shavarma_Order
 (
     id identity,
     delivery_name   varchar(50) not null,
@@ -7,7 +7,7 @@ create table if not exists Shavarma_order
     cc_number       varchar(16) not null,
     cc_expiration   varchar(5)  not null,
     cc_cvv          varchar(3)  not null,
-    placed_at       timestamp   not null
+    place_at       timestamp   not null
 );
 
 create table if not exists Shavarma
