@@ -7,7 +7,7 @@
 
 <body>
 
-<form method="POST" th:action="@{/orders}" th:object="${order}">
+<form method="POST" th:action="@{/orders}" th:object="${shawarmaOrder}">
     <h1>Закажите свою шаверму!</h1>
 
     <img th:src="@{/images/ShawarmaCloud.png}" alt="ShawarmaCloud" style="width:200px;height:200px">
@@ -15,27 +15,27 @@
     <h3>Ваши шавермы в заказе:</h3>
     <a th:href="@{/design}" id="another">Собрать еще шаверму</a><br>
     <ul>
-        <li th:each="shawarma : ${order.shawarmas}">
+        <li th:each="shawarma : ${shawarmaOrder.shawarmas}">
             <span th:text="${shawarma.name}">название шавермы</span></li>
     </ul>
 
     <h3>Детали доставки...</h3>
     <label for="deliveryName">Имя: </label>
-    <input type="text" th:field="${order.deliveryName}">
+    <input type="text" th:field="${shawarmaOrder.deliveryName}">
     <span class="validationError"
           th:if="${#fields.hasErrors('deliveryName')}"
           th:errors="*{deliveryName}">deliveryName Error</span>
     <br>
 
     <label for="deliveryStreet">Улица: </label>
-    <input type="text" th:field="${order.deliveryStreet}">
+    <input type="text" th:field="${shawarmaOrder.deliveryStreet}">
     <span class="validationError"
           th:if="${#fields.hasErrors('deliveryStreet')}"
           th:errors="*{deliveryStreet}">deliveryStreet Error</span>
     <br>
 
     <label for="deliveryCity">Город: </label>
-    <input type="text" th:field="${order.deliveryCity}">
+    <input type="text" th:field="${shawarmaOrder.deliveryCity}">
     <span class="validationError"
           th:if="${#fields.hasErrors('deliveryCity')}"
           th:errors="*{deliveryCity}">deliveryCity Error</span>
@@ -43,21 +43,21 @@
 
     <h3>Оплата...</h3>
     <label for="ccNumber">Номер карты: </label>
-    <input type="text" th:field="${order.ccNumber}">
+    <input type="text" th:field="${shawarmaOrder.ccNumber}">
     <span class="validationError"
           th:if="${#fields.hasErrors('ccNumber')}"
           th:errors="*{ccNumber}">CC Num Error</span>
     <br>
 
     <label for="ccExpiration">Срок действия: </label>
-    <input type="text" th:field="${order.ccExpiration}">
+    <input type="text" th:field="${shawarmaOrder.ccExpiration}">
     <span class="validationError"
           th:if="${#fields.hasErrors('ccExpiration')}"
           th:errors="*{ccExpiration}">ccExpiration Error</span>
     <br>
 
     <label for="ccCVV">CVV: </label>
-    <input type="text" th:field="${order.ccCVV}">
+    <input type="text" th:field="${shawarmaOrder.ccCVV}">
     <span class="validationError"
           th:if="${#fields.hasErrors('ccCVV')}"
           th:errors="*{ccCVV}">ccCVV Error</span>
