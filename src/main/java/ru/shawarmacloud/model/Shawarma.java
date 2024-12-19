@@ -1,4 +1,4 @@
-package ru.dbastrygin.shawarmacloud.model;
+package ru.shawarmacloud.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

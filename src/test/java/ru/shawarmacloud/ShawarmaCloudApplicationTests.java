@@ -1,4 +1,4 @@
-package ru.dbastrygin.shawarmacloud;
+package ru.shawarmacloud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

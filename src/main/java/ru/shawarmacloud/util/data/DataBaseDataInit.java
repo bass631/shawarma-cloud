@@ -1,11 +1,11 @@
-package ru.dbastrygin.shawarmacloud.util.data;
+package ru.shawarmacloud.util.data;
 
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import ru.dbastrygin.shawarmacloud.model.Ingredient;
-import ru.dbastrygin.shawarmacloud.repository.IngredientRepository;
+import ru.shawarmacloud.model.Ingredient;
+import ru.shawarmacloud.repository.IngredientRepository;
 
 @Component
 public class DataBaseDataInit {
