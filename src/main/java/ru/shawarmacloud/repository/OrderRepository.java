@@ -1,7 +1,7 @@
-package ru.dbastrygin.shawarmacloud.repository;
+package ru.shawarmacloud.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import ru.dbastrygin.shawarmacloud.model.ShawarmaOrder;
+import ru.shawarmacloud.model.ShawarmaOrder;
 
 import java.util.Date;
 import java.util.List;

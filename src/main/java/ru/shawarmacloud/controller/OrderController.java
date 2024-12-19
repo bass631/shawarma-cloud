@@ -1,4 +1,4 @@
-package ru.dbastrygin.shawarmacloud.controller;
+package ru.shawarmacloud.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import ru.dbastrygin.shawarmacloud.model.ShawarmaOrder;
-import ru.dbastrygin.shawarmacloud.repository.OrderRepository;
+import ru.shawarmacloud.model.ShawarmaOrder;
+import ru.shawarmacloud.repository.OrderRepository;
 
 @Slf4j
 @Controller
