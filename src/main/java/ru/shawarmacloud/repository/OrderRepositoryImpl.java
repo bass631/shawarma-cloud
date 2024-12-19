@@ -1,4 +1,4 @@
-package ru.dbastrygin.shawarmacloud.repository;
+package ru.shawarmacloud.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.asm.Type;
@@ -8,9 +8,9 @@ import org.springframework.jdbc.core.PreparedStatementCreatorFactory;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ru.dbastrygin.shawarmacloud.model.Ingredient;
-import ru.dbastrygin.shawarmacloud.model.Order;
-import ru.dbastrygin.shawarmacloud.model.Shawarma;
+import ru.shawarmacloud.model.Ingredient;
+import ru.shawarmacloud.model.Order;
+import ru.shawarmacloud.model.Shawarma;
 
 import java.sql.Types;
 import java.util.Arrays;

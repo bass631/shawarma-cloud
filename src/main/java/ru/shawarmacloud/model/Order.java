@@ -1,4 +1,4 @@
-package ru.dbastrygin.shawarmacloud.model;
+package ru.shawarmacloud.model;
 
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;

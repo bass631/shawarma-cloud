@@ -1,10 +1,10 @@
-package ru.dbastrygin.shawarmacloud.converter;
+package ru.shawarmacloud.converter;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-import ru.dbastrygin.shawarmacloud.model.Ingredient;
-import ru.dbastrygin.shawarmacloud.repository.IngredientRepository;
+import ru.shawarmacloud.model.Ingredient;
+import ru.shawarmacloud.repository.IngredientRepository;
 
 @Component
 @RequiredArgsConstructor

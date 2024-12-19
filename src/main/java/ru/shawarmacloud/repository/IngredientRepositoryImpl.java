@@ -1,8 +1,8 @@
-package ru.dbastrygin.shawarmacloud.repository;
+package ru.shawarmacloud.repository;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import ru.dbastrygin.shawarmacloud.model.Ingredient;
+import ru.shawarmacloud.model.Ingredient;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

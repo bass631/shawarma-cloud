@@ -8,24 +8,11 @@
         <version>3.3.2</version>
         <relativePath/>
     </parent>
-    <groupId>ru.dbastrygin</groupId>
+    <groupId>ru.shawarma.cloud</groupId>
     <artifactId>shawarma-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>shawarma-cloud</name>
     <description>shawarma-cloud</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
     <properties>
         <java.version>17</java.version>
     </properties>

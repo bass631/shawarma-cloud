@@ -1,4 +1,4 @@
-package ru.dbastrygin.shawarmacloud.controller;
+package ru.shawarmacloud.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -7,12 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import ru.dbastrygin.shawarmacloud.model.Ingredient;
-import ru.dbastrygin.shawarmacloud.model.Order;
-import ru.dbastrygin.shawarmacloud.model.Shawarma;
-import ru.dbastrygin.shawarmacloud.repository.IngredientRepository;
+import ru.shawarmacloud.model.Ingredient;
+import ru.shawarmacloud.model.Order;
+import ru.shawarmacloud.model.Shawarma;
+import ru.shawarmacloud.repository.IngredientRepository;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j

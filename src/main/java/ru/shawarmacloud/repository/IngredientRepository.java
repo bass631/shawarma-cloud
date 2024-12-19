@@ -1,6 +1,6 @@
-package ru.dbastrygin.shawarmacloud.repository;
+package ru.shawarmacloud.repository;
 
-import ru.dbastrygin.shawarmacloud.model.Ingredient;
+import ru.shawarmacloud.model.Ingredient;
 
 import java.util.Optional;
 
