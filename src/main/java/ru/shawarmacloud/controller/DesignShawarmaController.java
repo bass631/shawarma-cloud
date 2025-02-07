@@ -11,7 +11,6 @@ import ru.shawarmacloud.model.Ingredient;
 import ru.shawarmacloud.model.Shawarma;
 import ru.shawarmacloud.model.ShawarmaOrder;
 import ru.shawarmacloud.repository.IngredientRepository;
-import ru.shawarmacloud.udt.ShawarmaUDT;
 
 import java.util.List;
 
@@ -58,7 +57,7 @@ public class DesignShawarmaController {
 
     @PostMapping
     public String processTaco(
-            @Valid ShawarmaUDT shawarma, Errors errors,
+            @Valid Shawarma shawarma, Errors errors,
             @ModelAttribute ShawarmaOrder shawarmaOrder) {
         if (errors.hasErrors()) {
             return "design";

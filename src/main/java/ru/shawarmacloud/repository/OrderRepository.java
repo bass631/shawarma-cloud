@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-public interface OrderRepository extends CrudRepository<ShawarmaOrder, UUID> {
+public interface OrderRepository extends CrudRepository<ShawarmaOrder, String> {
     List<ShawarmaOrder> findByDeliveryCity(String deliveryCity);
     List<ShawarmaOrder> readOrderByDeliveryCityAndPlaceAtBetween(String deliveryCity, Date startDate, Date endDate);
     List<ShawarmaOrder> getOrderByDeliveryName(String deliveryName);
