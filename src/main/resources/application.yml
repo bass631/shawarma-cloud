@@ -1,10 +1,10 @@
 spring:
   application:
-    name: shawarma-cloud
+    name: shawarma_cloud
   thymeleaf:
     cache: false
   cassandra:
-    keyspace-name: shawarmacloud
+    keyspace-name: shawarma_cloud
     schema-action: recreate
     local-datacenter: datacenter1
 server:

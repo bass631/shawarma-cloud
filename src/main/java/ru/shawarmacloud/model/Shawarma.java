@@ -10,6 +10,7 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 import ru.shawarmacloud.udt.IngredientUDT;
+import ru.shawarmacloud.util.ShawarmaUDRUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Data
-@Table("shawarma")
+@Table("shawarmas")
 public class Shawarma {
 
     @PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED)
@@ -27,7 +28,8 @@ public class Shawarma {
     @Size(min = 2, message = "Ведите название")
     private String name;
 
-    @PrimaryKeyColumn(type = PrimaryKeyType.CLUSTERED, ordering = Ordering.DESCENDING)
+    @PrimaryKeyColumn(type = PrimaryKeyType.CLUSTERED,
+            ordering = Ordering.DESCENDING)
     private Date createAt = new Date();
 
     @Column("ingredients")

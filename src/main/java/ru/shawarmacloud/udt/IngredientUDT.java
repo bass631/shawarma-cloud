@@ -12,6 +12,7 @@ import ru.shawarmacloud.model.Ingredient;
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 @UserDefinedType("ingredient")
 public class IngredientUDT {
+
     private final String name;
     private final Ingredient.Type type;
 }

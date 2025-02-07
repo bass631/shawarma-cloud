@@ -7,7 +7,6 @@ import org.springframework.data.cassandra.core.mapping.Table;
 
 @Data
 @AllArgsConstructor
-//@RequiredArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 @Table("ingredients")
 public class Ingredient {
