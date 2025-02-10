@@ -44,6 +44,9 @@ public class ShawarmaOrder {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Shawarma> shawarmas = new ArrayList<>();
 
+    @ManyToOne
+    private User user;
+
     public void addShawarma(Shawarma shawarma) {
         this.shawarmas.add(shawarma);
     }
