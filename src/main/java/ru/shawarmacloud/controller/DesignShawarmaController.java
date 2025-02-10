@@ -62,11 +62,8 @@ public class DesignShawarmaController {
         if (errors.hasErrors()) {
             return "design";
         }
-
         shawarmaOrder.addShawarma(shawarma);
         log.info("Processing shawarma: {}", shawarma);
-
         return "redirect:/orders/current";
     }
 }
-

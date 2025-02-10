@@ -1,11 +1,7 @@
-delete
-from Ingredient_ref;
-delete
-from Shavarma;
-delete
-from Shavarma_order;
-delete
-from Ingredient;
+delete from Ingredient_ref;
+delete from Shavarma;
+delete from Shavarma_order;
+delete from Ingredient;
 
 insert into Ingredient (id, name, type) values ('PTLV', 'Пита', 'WRAP');
 insert into Ingredient (id, name, type) values ('CELV', 'Сырный лаваш', 'WRAP');

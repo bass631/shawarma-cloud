@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Cloud</title>
+</head>
+
+<body>
+<h1>Регистрация</h1>
+<img th:src="@{/images/ShawarmaCloud.png}" alt="ShawarmaCloud" style="width:200px;height:200px">
+<form method="POST" th:action="@{/register}" id="${registerForm}">
+
+    <label for="username">Логин: </label>
+    <input type="text" name="username"/>
+    <br>
+
+    <label for="password">Пароль: </label>
+    <input type="text" name="password"/>
+    <br>
+
+    <label for="confirmPassword">Подтверждение пароля: </label>
+    <input type="text" name="confirmPassword"/>
+    <br>
+
+    <label for="fullName">Полное имя: </label>
+    <input type="text" name="fullName"/>
+    <br>
+
+    <label for="street">Улица: </label>
+    <input type="text" name="street"/>
+    <br>
+
+    <label for="city">Город: </label>
+    <input type="text" name="city"/>
+    <br>
+
+    <input type="submit" value="Зарегистрироваться">
+
+</form>
+</body>
+</html>
