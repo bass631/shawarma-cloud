@@ -38,6 +38,6 @@ public class OrderController {
         orderRepository.save(shawarmaOrder);
         sessionStatus.setComplete();
 
-        return "redirect:/";
+        return "orderConfirm";
     }
 }

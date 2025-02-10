@@ -33,12 +33,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/design", "/orders").hasRole("USER")
-                        .requestMatchers("/", "/**").permitAll()
-                        .requestMatchers("/h2-console/**").permitAll())
+                        .requestMatchers("/h2-console/**", "/register").permitAll()
+                        .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .permitAll())
+                        .permitAll()
+                        .defaultSuccessUrl("/", true))
                 .build();
     }
 }

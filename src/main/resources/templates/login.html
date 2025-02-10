@@ -4,18 +4,12 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shawarma Cloud</title>
 </head>
-
 <body>
-<h1>Авторизация</h1>
+<h2>Вход</h2>
 <img th:src="@{/images/ShawarmaCloud.png}" alt="ShawarmaCloud" style="width:200px;height:200px">
 
-<div th:if="${error}">
-    Введите имя пользователя и пароль.
-</div>
 
-<p>Впервые у нас? Нажмите
-    <a th:href="@{/register}">здесь</a> для регистрации.
-</p>
+<h3>Введите имя пользователя и пароль</h3>
 
 <form method="POST" th:action="@{/login}" id="loginForm">
 
@@ -26,9 +20,13 @@
     <label for="password">Пароль: </label>
     <input type="text" name="password" id="password">
     <br><br>
-
     <input type="submit" value="Войти">
 
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}">
 </form>
+
+<p>Впервые у нас? Нажмите
+    <a th:href="@{/register}">здесь</a> для регистрации.
+</p>
 </body>
 </html>

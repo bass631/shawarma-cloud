@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<h1>Регистрация</h1>
+<h2>Регистрация</h2>
 <img th:src="@{/images/ShawarmaCloud.png}" alt="ShawarmaCloud" style="width:200px;height:200px">
 <form method="POST" th:action="@{/register}" id="${registerForm}">
 
@@ -32,10 +32,10 @@
 
     <label for="city">Город: </label>
     <input type="text" name="city"/>
-    <br>
-
+    <br><br>
     <input type="submit" value="Зарегистрироваться">
 
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}">
 </form>
 </body>
 </html>
